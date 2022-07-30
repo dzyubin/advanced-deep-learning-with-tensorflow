@@ -11,6 +11,8 @@ from __future__ import division
 from __future__ import print_function
 from __future__ import unicode_literals
 
+import itertools
+
 import numpy as np
 import csv
 import config
@@ -108,7 +110,10 @@ def build_label_dictionary(path):
     # insert background label 0
     classes.insert(0, 0)
     print("Num of unique classes: ", classes)
-    return dictionary, classes
+    # truncated_dict = dictionary[:10]
+    truncated_dict = dict(itertools.islice(dictionary.items(), 30))
+    # return dictionary, classes
+    return truncated_dict, classes
 
 
 def show_labels(image, labels, ax=None):

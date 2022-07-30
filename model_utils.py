@@ -54,7 +54,7 @@ def ssd_parser():
     help_ = "Number of epochs to train"
     parser.add_argument("--epochs",
                         # default=200,
-                        default=1,
+                        default=5,
                         type=int,
                         help=help_)
     help_ = "Number of data generator worker threads"
